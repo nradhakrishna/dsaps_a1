@@ -125,7 +125,7 @@ Mat remove_Horizontal_Seam(const Mat& image, int* seam){
 void make_vertical_seam_visible(Mat &image, int* seam){
     int rows=image.rows;
     for(int i=0;i<rows;i++){
-        image.at<Vec3b>(i, seam[i])=Vec3b(0, 0, 0);
+        image.at<Vec3b>(i,seam[i])=Vec3b(0, 0,0);
     }
     imshow("Seam", image);
     return;
@@ -134,9 +134,9 @@ void make_vertical_seam_visible(Mat &image, int* seam){
 void make_horizontal_seam_visible(Mat &image, int* seam){
     int cols=image.cols;
     for(int j=0;j<cols;j++){
-        image.at<Vec3b>(seam[j], j)=Vec3b(0, 0, 0);
+        image.at<Vec3b>(seam[j], j)=Vec3b(0,0, 0);
     }
-    imshow("Seam", image);
+    imshow("Seam",image);
     return;
 }
 Mat remove_Vertical_Seam(const Mat& image, const int* seam) {
