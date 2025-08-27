@@ -1,15 +1,7 @@
-10 4
-consider
-filters
-filers
-entitled
-tilers
-litter
-dames
-filling
-grasses
-fitter
-1 litter
-1 dame
-2 con
-3 james
+6
+0 2 9 10
+0 3 7 15
+0 5 12 12
+0 15 20 10
+0 19 24 8
+1
