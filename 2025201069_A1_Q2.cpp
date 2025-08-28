@@ -81,7 +81,11 @@ vector<int> find_levenshtein_distance(string s1, string s2, vector<int> &v){
     return ans;
 }
 
-void autocomplete(string source, string dest, vector<string> &ans, TrieNode* node, vector<int> v){
+void autocorrect(string source, string dest, vector<string> &ans, TrieNode* node, vector<int> v){
+    if(dest.size()>source.size()+3){
+        return;
+    } 
+    
     if(v.back()<=3 && node->end==true){
         ans.push_back(dest);
     }
@@ -92,7 +96,7 @@ void autocomplete(string source, string dest, vector<string> &ans, TrieNode* nod
         vector<int> temp=find_levenshtein_distance(source, string(1,97+i), v);
         string temp1=dest+char(97+i);
         
-        autocomplete(source, dest+char(97+i), ans, node->arr[i], temp);
+        autocorrect(source, dest+char(97+i), ans, node->arr[i], temp);
         
     }
 }
@@ -134,7 +138,7 @@ int main(){
             for(int i1=0;i1<=d.size();i1++){
                 v.push_back(i1);
             }
-            autocomplete(d, "", ans, root, v);
+            autocorrect(d, "", ans, root, v);
             cout<< ans.size()<< endl;
             for(auto z2: ans){
                 cout<< z2<< endl;
